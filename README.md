@@ -1,4 +1,5 @@
 # Telecom Provider Test
+[![Build Status](https://travis-ci.org/francescofavatella/telecom_provider_server_api.svg?branch=master)](https://travis-ci.org/francescofavatella/telecom_provider_server_api)
 
 ## Overview
 This project provides a simple implementations of a restful API for a telecom provider.
