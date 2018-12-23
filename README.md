@@ -174,6 +174,18 @@ GET		http://localhost:8080/phonenumbers?customerId=20
 Status code: 200 
 ```
 
+## How to run it as a Docker container
+
+### Build a Docker image
+```
+docker build -t my-spring-app .
+```
+
+### Run as a Docker container
+```
+winpty docker run -it --rm -p 8080:8080 my-spring-app
+```
+
 ## What's next
 
 - Handling of activation of duplicate phone numbers
