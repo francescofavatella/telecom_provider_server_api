@@ -7,5 +7,13 @@ cache:
   directories:
   - $HOME/.m2
   
+services:
+  - docker
+
+env:
+  - JOB=junitTest
+  - JOB=dockerTest
+
 script:
-  mvn test
+  - if test junitTest = "${JOB:?}"; then mvn test; fi
+  - if test dockerTest = "${JOB:?}"; then docker build -t telecom_provider_server_api . && docker run -d -p 8080:8080 telecom_provider_server_api && sleep 10 && curl -f http://localhost:8080/phonenumbers; fi
